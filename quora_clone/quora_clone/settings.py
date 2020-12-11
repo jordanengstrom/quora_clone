@@ -71,7 +71,7 @@ ROOT_URLCONF = 'quora_clone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -150,4 +150,10 @@ SITE_ID = 1
 
 # For django-allauth
 ACCOUNT_EMAIL_VERIFICATION = "none"
-ACCOUNT_EMAIL_REQUIRED = (True)
+ACCOUNT_EMAIL_REQUIRED = True
+
+# Django Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_ATHENTICATION_CLASSES': ('rest_framework.authentication.TokentAuthentication',
+                                      'rest_framework.authentication.SessionAuthentication',)
+}

@@ -18,7 +18,7 @@ from django.urls import path, include
 
 from django_registration.backends.one_step.views import RegistrationView
 
-from ..users.forms import CustomUserForm
+from users.forms import CustomUserForm
 
 
 urlpatterns = [
