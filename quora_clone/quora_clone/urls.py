@@ -23,7 +23,15 @@ from ..users.forms import CustomUserForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Custom version of RegistrationView provided by Django
+    path('accounts/register/', RegistrationView.as_view(form_class=CustomUserForm, success_url='/'),
+         name='django-registration-register'),
+    # Other urls Django needs
+    path('accounts/', include('django_registration.backends.one_step.urls')),
+    # Used to login users via the browser
     path('accounts/', include('django.contrib.auth.urls')),
+    # Login for browseable api
     path('api-auth/', include('rest_framework.urls')),
     path('api/rest-auth/', include('rest_auth.urls')),
     path('api/rest-auth/registration/', include('rest_auth.registration.urls')),
