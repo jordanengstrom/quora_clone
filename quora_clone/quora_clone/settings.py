@@ -155,5 +155,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 # Django Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_ATHENTICATION_CLASSES': ('rest_framework.authentication.TokentAuthentication',
-                                      'rest_framework.authentication.SessionAuthentication',)
+                                      'rest_framework.authentication.SessionAuthentication',),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',)
+
 }
