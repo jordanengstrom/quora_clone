@@ -4,6 +4,7 @@ from users.api.serializers import UserDisplaySerializer
 
 
 class CurrentUserAPIView(APIView):
-    def get(self, request):
+    @staticmethod
+    def get(request):
         serializer = UserDisplaySerializer(request.user)
         return Response(serializer.data)
