@@ -18,7 +18,7 @@ class AnswerSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_created_at(instance):
-        return instance.created_at.strftime('%B %d %Y')
+        return instance.created_at.strftime('%B %d, %Y')
 
     @staticmethod
     def get_likes_count(instance):
@@ -42,7 +42,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_created_at(instance):
-        return instance.created_at.strftime('%B %d %Y')
+        return instance.created_at.strftime('%B %d, %Y')
 
     @staticmethod
     def get_answers_count(instance):
