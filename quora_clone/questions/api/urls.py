@@ -1,6 +1,6 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from questions.api import views as qv  # qv = question views
+from . import views as qv  # qv = question views
 
 
 router = DefaultRouter()
