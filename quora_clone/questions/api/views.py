@@ -1,6 +1,8 @@
-from rest_framework import generics, viewsets
+from rest_framework import generics, status, viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.exceptions import ValidationError
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .serializers import AnswerSerializer, QuestionSerializer
 from .permissions import IsAuthorOrReadOnly
@@ -40,3 +42,40 @@ class AnswerListAPIView(generics.ListAPIView):
     def get_queryset(self):
         kwarg_slug = self.kwargs.get('slug')
         return Answer.objects.filter(question__slug=kwarg_slug).order_by('-created_at')
+
+
+class AnswerRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Answer.objects.all()
+    serializer_class = AnswerSerializer
+    permission_classes = [IsAuthenticated, IsAuthorOrReadOnly]
+
+
+class AnswerLikeAPIView(APIView):
+    serializer_class = AnswerSerializer
+    permission_classes = [IsAuthenticated]
+
+    # Removes a like
+    def delete(self, request, pk):
+        answer = get_object_or_404(Answer, pk=pk)
+        user = request.user
+
+        answer.voters.remove(user)
+        answer.save()
+
+        serializer_context = {'request': request}
+        serializer = self.serializer_class(answer, context=serializer_context)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # Adds a like
+    def post(self, request, pk):
+        answer = get_object_or_404(Answer, pk=pk)
+        user = request.user
+
+        answer.voters.add(user)
+        answer.save()
+
+        serializer_context = {'request': request}
+        serializer = self.serializer_class(answer, context=serializer_context)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
