@@ -1,4 +1,5 @@
-<!doctype html>
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,8 @@
     <title>Quora Clone</title>
 </head>
 <body>
-    <h1>Vue JS</h1>
+    <h1>Vue JS (django's index.html)</h1>
     <div id="app"></div>
+    {%  render_bundle 'app' %}
 </body>
 </html>
