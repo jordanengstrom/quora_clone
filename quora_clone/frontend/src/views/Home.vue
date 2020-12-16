@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="container">
+    <div class="container mt-2">
       <div v-for="question in questions" :key="question.pk">
         <p class="mb-0">
           Posted by: <span class="question-author-name">{{ question.author }}</span>
@@ -50,6 +50,7 @@ export default {
       this.loadingQuestions = true;
       apiService(endpoint).then(data => {
         this.questions.push(...data.results);
+        this.loadingQuestions = false;
         if (data.next) {
           this.next = data.next;
         } else {
