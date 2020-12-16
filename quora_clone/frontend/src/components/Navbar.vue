@@ -12,9 +12,11 @@
             >
           </li>
           <li class="nav-item mx-1">
-            <router-link :to="{ name: 'Home' }" class="btn btn-sm btn-danger"
-              >Add Question</router-link
-            >
+            <router-link
+              :to="{ name: 'QuestionEditor' }"
+              class="btn btn-sm btn-danger"
+              >Ask Question
+            </router-link>
           </li>
           <li class="nav-item">
             <a class="btn btn-sm btn-outlin-secondary" href="/accounts/logout/"
