@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Question from "@/views/Question";
 import QuestionEditor from "@/views/QuestionEditor";
 import AnswerEditor from "@/views/AnswerEditor";
+import NotFound from "@/views/NotFound";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,11 @@ const routes = [
     name: "AnswerEditor",
     component: AnswerEditor,
     props: true
+  },
+  {
+    path: "*",
+    name: "NotFound",
+    component: NotFound
   }
 ];
 
