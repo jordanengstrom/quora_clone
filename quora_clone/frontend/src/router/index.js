@@ -27,7 +27,8 @@ const routes = [
   {
     path: "/answer/:id",
     name: "AnswerEditor",
-    component: "AnswerEditor"
+    component: AnswerEditor,
+    props: true
   }
 ];
 
