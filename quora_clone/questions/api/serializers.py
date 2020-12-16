@@ -7,6 +7,7 @@ class AnswerSerializer(serializers.ModelSerializer):
     created_at = serializers.SerializerMethodField()
     likes_count = serializers.SerializerMethodField()
     user_has_voted = serializers.SerializerMethodField()
+    question_slug = serializers.SerializerMethodField()
 
     class Meta:
         model = Answer
@@ -23,6 +24,10 @@ class AnswerSerializer(serializers.ModelSerializer):
     @staticmethod
     def get_likes_count(instance):
         return instance.voters.count()
+
+    @staticmethod
+    def get_question_slug(instance):
+        return instance.question.slug
 
 
 class QuestionSerializer(serializers.ModelSerializer):

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Question from "@/views/Question";
 import QuestionEditor from "@/views/QuestionEditor";
+import AnswerEditor from "@/views/AnswerEditor";
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
     path: "/ask",
     name: "QuestionEditor",
     component: QuestionEditor
+  },
+  {
+    path: "/answer/:id",
+    name: "AnswerEditor",
+    component: "AnswerEditor"
   }
 ];
 
