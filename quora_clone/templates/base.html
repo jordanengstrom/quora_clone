@@ -13,10 +13,20 @@
         {%  endblock %}
     </head>
     <body>
-        {% block content %}
-        {% endblock %}
+      <div class="container">
+        <div class="row">
+        <div class="col-sm-6">
+          {% load static %}
+          <img id="question-head" src="{% static 'static/natalie-dmay-unsplash.jpg' %}" alt="building side mural of grey face against yellow and black background with a horizontal blue double helix in the center of the face">
+    </div>
+        <div class="col-sm-6">
+          {% block content %}
+          {% endblock %}
 
-        {% block js %}
-        {% endblock %}
+          {% block js %}
+          {% endblock %}
+        </div>
+        </div>
+      </div>
     </body>
 </html>
