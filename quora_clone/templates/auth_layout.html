@@ -1,10 +1,20 @@
 {%  extends "base.html" %}
 {% block style %}
 <style>
-    #question-head {
-        max-width: 75%;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    #question-head-container {
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-left: -15rem;
+    }
+    #question-head-img {
+        max-width: 100%;
         height: auto;
-        margin: auto;
+        margin-left: 0;
     }
     .login-form-container {
         width: 300px;
@@ -17,7 +27,11 @@
     }
 
     .outer-area {
-        margin-top: 100px;
+        {#margin-top: 9rem;#}
+        {#margin-left: 3rem;#}
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .auth-box {
