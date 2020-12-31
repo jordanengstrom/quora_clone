@@ -2,17 +2,22 @@
 {% block style %}
 <style>
     .container {
+        height: 100vh;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+    }
+    .flex-child {
+        flex: 1
     }
     #question-head-container {
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        margin-left: -15rem;
     }
     #question-head-img {
-        max-width: 100%;
+        max-width: 75%;
         height: auto;
         margin-left: 0;
     }
@@ -27,11 +32,7 @@
     }
 
     .outer-area {
-        {#margin-top: 9rem;#}
-        {#margin-left: 3rem;#}
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        flex: 1;
     }
 
     .auth-box {
@@ -40,13 +41,13 @@
         padding-top: 25px;
         padding-bottom: 25px;
         width: 600px;
-        margin: auto;
+        {#margin: auto;#}
     }
 </style>
 {%  endblock %}
 
 {% block content %}
-<div class="outer-area">
+<div class="outer-area flex-child">
     <div class="auth-box text-center">
         {% block auth %}
         {% endblock %}
