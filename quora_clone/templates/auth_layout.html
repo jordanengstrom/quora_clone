@@ -1,50 +1,56 @@
 {%  extends "base.html" %}
 {% block style %}
 <style>
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .container {
-        height: 100vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: stretch;
-        margin-left: 21rem;
-        margin-right: 0rem;
-    }
-    .flex-child {
-        position: relative;
-        flex: 1;
-    }
-    #question-head-img {
-        width: 46rem;
-        height: auto;
-    }
-    .question-head-container {
-
-    }
-    .login-form-container {
-        width: 20rem;
-        margin: auto;
-    }
-    .registration-form-container {
-        width: 400px;
-        margin: auto;
-    }
-    .outer-area {
-        margin-right: -12rem;
-        padding-left: 20rem;
-    }
-    .auth-box {
-        border: 3px solid lightgrey;
-        border-radius: 10px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        width: 600px;
-    }
+.auth-box {
+  border: 3px solid lightgrey;
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 600px;
+}
+#border-box-1 {
+  background-color: #f9d528
+}
+#border-box-2 {
+  background-color: #5aebfa;
+}
+#border-box-3 {
+  background-color: #f9d528
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  margin-left: 21rem;
+  margin-right: 0rem;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-child {
+  position: relative;
+  flex: 1;
+}
+.login-form-container {
+  width: 20rem;
+  margin: auto;
+}
+.outer-area {
+  margin-right: -12rem;
+  padding-left: 20rem;
+}
+#question-head-img {
+  width: 46rem;
+  height: auto;
+}
+.registration-form-container {
+  width: 400px;
+  margin: auto;
+}
 </style>
 {%  endblock %}
 
@@ -57,10 +63,16 @@
 
   <div class="flex-child">
     <div class="outer-area">
-        <div class="auth-box text-center">
-            {% block auth %}
-            {% endblock %}
+      <div id="border-box-1">
+        <div id="border-box-2">
+          <div id="border-box-3">
+              <div class="auth-box text-center">
+                  {% block auth %}
+                  {% endblock %}
+              </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
