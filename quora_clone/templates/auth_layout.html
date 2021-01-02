@@ -10,28 +10,24 @@
   background-color: #ffffff;
   margin: auto;
 }
-#border-box-1 {
-  background-color: #7b7b78;
-  border-radius: 10px;
-  width: 39.25rem;
-  padding-left: 0.25rem;
+.border-box {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  border-radius: 10px;
+}
+#border-box-1 {
+  background-color: #7b7b78;
+  width: 39.25rem;
+  padding-left: 0.25rem;
 }
 #border-box-2 {
   background-color: #f9d528;
-  border-radius: 10px;
   width: 38.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
   padding-left: 0.25rem;
 }
 #border-box-3 {
   background-color: #7b7b78; /*#5aebfa;*/
-  border-radius: 10px;
   width: 38.25rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 .container {
   height: 100vh;
@@ -79,9 +75,9 @@ div {
 
   <div class="flex-child">
     <div class="outer-area">
-      <div id="border-box-1">
-        <div id="border-box-2">
-          <div id="border-box-3">
+      <div class="border-box" id="border-box-1">
+        <div class="border-box" id="border-box-2">
+          <div class="border-box" id="border-box-3">
               <div class="auth-box text-center">
                   {% block auth %}
                   {% endblock %}
