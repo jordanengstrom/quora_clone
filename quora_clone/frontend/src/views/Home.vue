@@ -61,7 +61,7 @@ export default {
   },
   created() {
     this.getQuestions();
-    document.title = "Quora Clone";
+    document.title = "Que an Ayyy";
   }
 };
 </script>

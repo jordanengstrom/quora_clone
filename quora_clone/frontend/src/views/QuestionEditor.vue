@@ -66,7 +66,7 @@ export default {
     }
   },
   created() {
-    document.title = "Question Editor - Quora Clone";
+    document.title = "Question Editor - Que an Ayyy";
   }
 };
 </script>
