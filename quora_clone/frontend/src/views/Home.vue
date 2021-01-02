@@ -69,7 +69,7 @@ export default {
 <style scoped>
 .question-author-name {
   font-weight: bold;
-  color: #dc3545;
+  color: #5aebfa;
 }
 
 .question-link {
