@@ -23,8 +23,8 @@
         class="btn btn-sm"
         @click="toggleLike"
         :class="{
-          'btn-danger': userLikedAnswer,
-          'btn-outline-danger': !userLikedAnswer
+          'btn-ask': userLikedAnswer,
+          'btn-outline-secondary': !userLikedAnswer
         }"
       >
         <strong>Like [{{ likesCounter }}]</strong>
@@ -84,5 +84,11 @@ export default {
 </script>
 
 <style scoped>
+.btn-ask {
+  background-color: #f9d528;
+}
 
+.btn-ask:hover {
+  color: white;
+}
 </style>

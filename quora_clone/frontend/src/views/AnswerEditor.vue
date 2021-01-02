@@ -8,7 +8,7 @@
         rows="3"
       ></textarea>
       <br />
-      <button type="submit" class="btn btn-success">Update your answer</button>
+      <button type="submit" class="btn btn-ask">Update your answer</button>
     </form>
     <p v-if="error" class="muted mt-2">{{ error }}</p>
   </div>
@@ -55,4 +55,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.btn-ask {
+  background-color: #f9d528;
+}
+
+.btn-ask:hover {
+  color: white;
+}
+</style>

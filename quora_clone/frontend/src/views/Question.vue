@@ -25,7 +25,7 @@
             ></textarea>
           </div>
           <div class="card-footer px-3">
-            <button type="submit" class="btn btn-sm btn-success">
+            <button type="submit" class="btn btn-sm btn-ask">
               Submit Your Answer
             </button>
           </div>
@@ -33,7 +33,7 @@
         <p v-if="error" class="error mt-2">{{ error }}</p>
       </div>
       <div v-else>
-        <button class="btn btn-sm btn-success" @click="showForm = true">
+        <button class="btn btn-sm btn-ask" @click="showForm = true">
           Answer the Question
         </button>
       </div>
@@ -55,7 +55,7 @@
         <button
           v-show="next"
           @click="getQuestionAnswers"
-          class="btn btn-sm btn-outline-success"
+          class="btn btn-sm btn-outline-secondary"
         >
           Load More
         </button>
@@ -173,23 +173,31 @@ export default {
 </script>
 
 <style scoped>
-#notfound {
-  color: red;
-  text-align: center;
-}
-
 .author-name {
   font-weight: bold;
-  color: #dc3545;
+  color: #7b7b78;
 }
 
 .answer-added {
   font-weight: bold;
-  color: green;
+  color: black;
+}
+
+.btn-ask {
+  background-color: #f9d528;
+}
+
+.btn-ask:hover {
+  color: white;
 }
 
 .error {
   font-weight: bold;
   color: red;
+}
+
+#notfound {
+  color: red;
+  text-align: center;
 }
 </style>

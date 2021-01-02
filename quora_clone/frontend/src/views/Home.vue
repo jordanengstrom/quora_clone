@@ -20,7 +20,7 @@
         <button
           v-show="next"
           @click="getQuestions"
-          class="btn btn-sm btn-outline-success"
+          class="btn btn-sm btn-ask"
         >
           Load More
         </button>
@@ -67,9 +67,17 @@ export default {
 </script>
 
 <style scoped>
+.btn-ask {
+  background-color: #f9d528;
+}
+
+.btn-ask:hover {
+  color: white;
+}
+
 .question-author-name {
   font-weight: bold;
-  color: #5aebfa;
+  color: #7b7b78;
 }
 
 .question-link {
