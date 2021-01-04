@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # libraries
     'rest_framework',
     'rest_framework.authtoken',
+    'django_email_verification',
 
     'allauth',
     'allauth.account',
@@ -176,3 +177,14 @@ WEBPACK_LOADER = {
         'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json'),
     }
 }
+
+EMAIL_ACTIVE_FIELD = 'is_active'
+EMAIL_SERVER = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_ADDRESS = 'jordan.engstrom@gmail.com'
+QC_FROM_EMAIL_FROM_ADDRESS = os.environ['QC_FROM_EMAIL_FROM_ADDRESS']
+QC_EMAIL_PASSWORD = os.environ['QC_EMAIL_PASSWORD']
+EMAIL_MAIL_SUBJECT = 'Confirm your email'
+EMAIL_MAIL_HTML = 'mail_body.html'
+EMAIL_MAIL_PLAIN = 'mail_body.txt'
+EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
