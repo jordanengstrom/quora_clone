@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # libraries
     'rest_framework',
     'rest_framework.authtoken',
-    'django_email_verification',
+    'verify_email',
 
     'allauth',
     'allauth.account',
@@ -178,13 +178,14 @@ WEBPACK_LOADER = {
     }
 }
 
-EMAIL_ACTIVE_FIELD = 'is_active'
-EMAIL_SERVER = 'smtp.gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_ADDRESS = 'queersWhoCode@gmail.com'
-EMAIL_FROM_ADDRESS = os.environ['QC_EMAIL_FROM_ADDRESS']
-EMAIL_PASSWORD = os.environ['QC_EMAIL_PASSWORD']
-EMAIL_MAIL_SUBJECT = 'Confirm your email'
-EMAIL_MAIL_HTML = 'mail_body.html'
-EMAIL_MAIL_PLAIN = 'mail_body.txt'
-EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ['QC_EMAIL_FROM_ADDRESS']
+EMAIL_HOST_PASSWORD = os.environ['QC_EMAIL_PASSWORD']
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_MAIL_SUBJECT = 'Confirm your email'
+# EMAIL_MAIL_HTML = 'mail_body.html'
+# EMAIL_MAIL_PLAIN = 'mail_body.txt'
+# EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
