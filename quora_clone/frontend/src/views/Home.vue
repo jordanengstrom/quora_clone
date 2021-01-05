@@ -61,7 +61,7 @@ export default {
   },
   created() {
     this.getQuestions();
-    document.title = "Que an Ayyy";
+    document.title = "Question Time";
   }
 };
 </script>

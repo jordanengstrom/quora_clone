@@ -66,7 +66,7 @@ export default {
     }
   },
   created() {
-    document.title = "Question Editor - Que an Ayyy";
+    document.title = "Question Editor - Question Time";
   }
 };
 </script>

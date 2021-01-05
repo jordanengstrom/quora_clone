@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light my-navbar">
     <div class="container">
       <router-link :to="{ name: 'Home' }" class="navbar-brand"
-        >Que an Ayyy
+        >Question Time
       </router-link>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
