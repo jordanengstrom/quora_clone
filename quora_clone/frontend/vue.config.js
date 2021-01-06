@@ -33,6 +33,6 @@ module.exports = {
     extract: {
       filename: "bundle.css",
       chunkFilename: "bundle.css"
-    },
+    }
   }
 };
