@@ -1,7 +1,7 @@
 # CONTAINER SETUP
 # pull official base images
-FROM python:3.8-alpine
-FROM node:15.5-alpine
+FROM python:3.8-slim
+FROM node:15.5-slim
 
 # Container info
 LABEL maintainer="https://github.com/jordanengstrom"
@@ -27,13 +27,13 @@ ENV QTIME_SECRET_KEY 'foo'
 # install psycopg2
 RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev \
-    && apk add py3-pip
+    && apk add py3-pip \
     && apk add postgresql-dev \
     && python3 -m pip install --upgrade pip \
     && pip3 install wheel \
     && pip3 install psycopg2 \
-    && apk del build-deps \
-    && pip3 install -r requirements.txt
+    && pip3 install -r requirements.txt \
+    && apk del build-deps
 
 # Specify port number
 EXPOSE 8000
