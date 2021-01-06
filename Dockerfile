@@ -8,12 +8,11 @@ LABEL maintainer="https://github.com/jordanengstrom"
 
 # set work directory
 RUN mkdir /app
-COPY . /app
+COPY ./quora_clone /app/
 WORKDIR /app
 
 # FRONTEND SETUP
-RUN ls
-RUN cd quora_clone/frontend \
+RUN cd frontend \
     && npm install \
     && npm run build \
     && cd ../
@@ -29,6 +28,7 @@ ENV QTIME_SECRET_KEY 'foo'
 RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev \
     && apk add postgresql-dev \
+    && ptython3 -m pip install --upgrade pip \
     && pip install psycopg2 \
     && apk del build-deps \
     && pip install -r requirements.txt
