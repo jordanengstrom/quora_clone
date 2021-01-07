@@ -25,15 +25,13 @@ ENV DEBUG 0
 ENV QTIME_SECRET_KEY 'foo'
 
 # install psycopg2
-RUN apk update \
-    && apk add --virtual build-deps gcc python3-dev musl-dev \
-    && apk add py3-pip \
-    && apk add postgresql-dev \
+RUN apt-get -y update \
+    && apt-get install -y python3-pip python3-dev -y \
+#    && apt-get install -y postgresql postgresql-contrib \
     && python3 -m pip install --upgrade pip \
     && pip3 install wheel \
-    && pip3 install psycopg2 \
-    && pip3 install -r requirements.txt \
-    && apk del build-deps
+#    && pip3 install psycopg2 \
+    && pip3 install -r requirements.txt
 
 # Specify port number
 EXPOSE 8000
