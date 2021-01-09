@@ -29,8 +29,6 @@ RUN apt-get -y update \
     && apt-get install -y python3-pip python3-dev -y \
 #    && apt-get install -y postgresql postgresql-contrib \
     && python3 -m pip install --upgrade pip \
-    && pip3 install wheel \
-#    && pip3 install psycopg2 \
     && pip3 install -r requirements.txt
 
 RUN python3 manage.py makemigrations && python3 manage.py migrate
