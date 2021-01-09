@@ -12,10 +12,10 @@ COPY ./quora_clone /app/
 WORKDIR /app
 
 # FRONTEND SETUP
-#RUN cd frontend \
-#    && npm install \
-#    && npm run build \
-#    && cd ../
+RUN cd frontend \
+    && npm install \
+    && npm run build \
+    && cd ../
 
 # BACKEND SETUP
 # set environment variables
