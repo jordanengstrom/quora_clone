@@ -6,5 +6,6 @@ django-registration
 django-rest-auth
 django-webpack-loader
 djangorestframework
+gunicorn
 pytz
 sqlparse
