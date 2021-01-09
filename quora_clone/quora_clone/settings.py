@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('QTIME_SECRET_KEY', default='foo')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('QTIME_DEBUG_VALUE', default=False)
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0']
 
 # Application definition
 
