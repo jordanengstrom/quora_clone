@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/dist'),
 ]
 
-# STATIC_ROOT = ''
+STATIC_ROOT = 'static'
 
 # For Custom User Model
 AUTH_USER_MODEL = 'users.CustomUser'

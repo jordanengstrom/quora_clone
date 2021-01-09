@@ -33,6 +33,9 @@ RUN apt-get -y update \
 #    && pip3 install psycopg2 \
     && pip3 install -r requirements.txt
 
+RUN python3 manage.py makemigrations && python3 manage.py migrate
+RUN python3 manage.py collectstatic --no-input
+
 # Specify port number
 EXPOSE 8000
 
