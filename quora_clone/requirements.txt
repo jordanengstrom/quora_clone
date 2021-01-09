@@ -1,3 +1,4 @@
+asgiref
 Django
 django-allauth
 django-crispy-forms
@@ -5,3 +6,5 @@ django-registration
 django-rest-auth
 django-webpack-loader
 djangorestframework
+pytz
+sqlparse
