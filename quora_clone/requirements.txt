@@ -6,8 +6,5 @@ django-registration
 django-rest-auth
 django-webpack-loader
 djangorestframework
-gunicorn
-psycopg2
 pytz
 sqlparse
-wheel
