@@ -24,10 +24,8 @@ ENV PYTHONUNBUFFERED 1
 ENV DEBUG 0
 ENV QTIME_SECRET_KEY 'foo'
 
-# install psycopg2
 RUN apt-get -y update \
     && apt-get install -y python3-pip python3-dev -y \
-#    && apt-get install -y postgresql postgresql-contrib \
     && python3 -m pip install --upgrade pip \
     && pip3 install -r requirements.txt
 

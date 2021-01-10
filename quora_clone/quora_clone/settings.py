@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('QTIME_SECRET_KEY', default='foo')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('QTIME_DEBUG_VALUE', default=False)
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 # Application definition
 
@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/dist'),
 ]
 
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'static/'
 
 # For Custom User Model
 AUTH_USER_MODEL = 'users.CustomUser'
